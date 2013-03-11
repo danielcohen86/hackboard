@@ -21,7 +21,10 @@ class Post < ActiveRecord::Base
   validates :link, presence: true,
                    format: /^http:\/\/.+\.com$/
 
+  validates :user, presence: true
+
   # Posts have many comments. In order for this association to work, the `comments` table should have
   # a `post_id` column.
   has_many :comments
+  belongs_to :user
 end
