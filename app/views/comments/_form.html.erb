@@ -1,4 +1,6 @@
-<%= form_for [post, comment] do |f| %>
+<%= form_for comment do |f| %>
+  <%= f.hidden_field :post_id %>
+  
   <%= f.text_field :body, placeholder: 'Add a comment...' %>
   <%= f.submit %>
 <% end %>

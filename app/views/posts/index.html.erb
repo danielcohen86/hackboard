@@ -4,7 +4,7 @@
 <% @posts.each do |p| %>
   <li>
     <%= p.description %>
-    <%= link_to "Go!", p.link %>
+    <%= link_to "Go", p.link %>
 
     <ul>
       <%= render p.comments %>
