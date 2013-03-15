@@ -1,19 +1,7 @@
 <h1>All Posts</h1>
 
 <ul>
-<% @posts.each do |p| %>
-  <li>
-    <%= p.description %>
-    <%= link_to "Go", p.link %>
-
-    <ul>
-      <%= render p.comments %>
-      <li><%= render 'comments/form',
-                     comment: p.comments.build,
-                     post: p %></li>
-    </ul>
-  </li>
-<% end %>
+  <%= render @posts %>
 </ul>
 
 <%= link_to "New Post", new_post_path %>

@@ -36,4 +36,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def mine
+    @user = current_user
+    @posts = @user.posts.includes(:comments)
+    render :index
+  end
+
 end
