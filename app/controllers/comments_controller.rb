@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
     # Use the association to create the comment. This is useful since we
     # don't want to allow people to directly access the post_id on a comment.
     @comment = post.comments.build(params[:comment])
+    @comment.user = current_user
 
     if @comment.save
       redirect_to posts_path

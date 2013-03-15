@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   def create
     # Remember, params stores everything sent to the server through form or
     # querystring data. By default, `form_for` will place your data in `params[:model_name]`
-    @post = Post.new(params[:post])
+    @post = current_user.posts.build(params[:post])
 
     # This idiom is very common in create and update actions. `save` will return
     # false if the record is invalid. We render `new` rather than redirecting so
